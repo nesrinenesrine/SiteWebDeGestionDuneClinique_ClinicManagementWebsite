@@ -38,27 +38,6 @@ Avant d'installer et de faire fonctionner ce projet, assurez-vous d'avoir les é
     ```bash
     cd votre-repo
     ```
-
-3. Configurez la base de données MySQL :
-
-    - Créez une base de données nommée `clinique`.
-    - Importez le fichier SQL situé dans le répertoire `database` pour créer les tables nécessaires :
-
-        ```bash
-        mysql -u votre-utilisateur -p clinique < database/clinique.sql
-        ```
-
-4. Configurez les paramètres de la base de données dans le fichier `config.php` :
-
-    ```php
-    <?php
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'votre-utilisateur');
-    define('DB_PASSWORD', 'votre-mot-de-passe');
-    define('DB_NAME', 'clinique');
-    ?>
-    ```
-
 Démarrez votre serveur web et accédez à l'application via votre navigateur web à l'adresse `http://localhost/votre-repo`.
 
 ## Utilisation
