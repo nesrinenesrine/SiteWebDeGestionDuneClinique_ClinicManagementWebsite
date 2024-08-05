@@ -54,7 +54,3 @@ Démarrez votre serveur web et accédez à l'application via votre navigateur we
 - **Backend** : PHP
 - **Base de données** : MySQL, [phpMyAdmin](https://www.phpmyadmin.net/)
 - **Serveur** : Apache ou Nginx
-
-## Licence
-
-Ce projet est sous licence MIT. Veuillez consulter le fichier [LICENSE](LICENSE) pour plus de détails.
