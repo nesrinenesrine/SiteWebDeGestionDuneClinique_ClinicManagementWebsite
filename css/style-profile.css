@@ -1,0 +1,487 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #f8edfc;
+    font-family: "roboto" , sans-serif;
+}
+.contaire {
+    position: relative;
+    width: 100%;
+}
+.nav {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #274393;
+    border-left: 10px solid #274393;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.nav.active {
+    width: 80px;
+}
+.nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.nav ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.nav ul li:hover,
+.nav ul li.hovered {
+    background-color: #f8edfc;
+}
+.nav ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+} 
+.nav ul li a img {
+    position: relative;
+    padding: 1rem;
+    width: 290px;
+    height: 250px;
+}
+.nav ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #f8edfc;
+    cursor: pointer;
+}
+.nav ul li:hover a ,
+.nav ul li.hovered a {
+    color: #274393;
+}
+.nav ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.nav ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+.nav ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.nav ul li:hover a::before ,
+.nav ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #f8edfc;
+    pointer-events: none;
+}
+.nav ul li:hover a::after ,
+.nav ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px #f8edfc;
+    pointer-events: none;
+}
+
+.mains {
+    position: absolute;
+    width: calc(100% - 300%);
+    left: 300px;
+    min-height: 100vh;
+    background-color: #f8edfc;
+    transition: 0.5s;
+
+}
+.mains.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap : 60rem ;
+
+    padding: 0 10px;
+}
+.toggle {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.user{
+    position: relative;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.mod-info {
+   position: relative;
+   width: 100%;
+   padding: 20px;
+}
+.mains .main {
+    display: none;
+}
+.mains .main.is-active {
+    display: block;
+}
+.charts .chart {
+    display: none;
+}
+.charts .chart.is-active {
+    display: block;
+}
+.main {
+    margin-left: 2rem;
+}
+.mod-info {
+  position: relative;
+  margin-left: 5rem;
+  
+}
+
+
+.box {
+    width:600px ;
+    height:500px ;
+    box-shadow: 0 5px 10px rgb(80, 74, 74);
+    background-color: white;
+    position: absolute;
+    top:0px;
+    left: 300px;
+    border-radius: 10px;
+    padding: 25px;
+}
+.box4 {
+    height:580px ;
+}
+.box h2 {
+    box-shadow: 0 5px 10px rgb(144, 137, 250);
+    background-color: #274393;
+    color: white;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+.form-input {
+    width: 400px;
+    height: 35px;
+    position: relative;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+.form-input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #274393;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+.form-input label {
+    position: absolute;
+    top:5px;
+    left: 15px;
+    color: #274393;
+    text-transform: capitalize;
+    font-size: 18px;
+    transition: top .3s;
+    padding: 0 5px;
+}
+.form-input input:hover {
+   border-color: #577fee;
+}
+.form-input input:focus{
+    border-color: #0645f3;
+    color: #274393;
+}
+.form-input input:focus ~ label ,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+    top: -9px ;
+    background-color: white;
+}
+.nom-prenom  {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.nom-prenom input {
+    width: 250px;
+}
+
+
+.box button {
+    padding:  9px 25px;
+    background-color: #274393;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    margin-top: 1rem;
+    margin-left:15rem;
+    
+}
+.box button:hover {
+    background-color: #6f95f5;
+}
+.patient  {
+   
+  
+    
+   
+}
+
+ table {
+    border-collapse:collapse ;
+    box-shadow: 0 5px 10px rgb(80, 74, 74);
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 2rem;
+   
+}
+ thead{
+    box-shadow: 0 5px 10px rgb(144, 137, 250);
+     background-color: #274393;
+     color: white;
+
+ }
+ th {
+     padding: 1rem 2rem;
+     text-decoration: uppercase;
+     letter-spacing: 0.1rem;
+     font-size: 0.7rem;
+     font-weight: 900;
+
+
+ }
+
+
+ td {
+     padding: 0.5rem 1.5rem;
+ }
+ table button {
+      border-radius: 15px;
+     
+      padding: 0.2rem 1rem;
+      border-color: #0645f3;
+      background-color: #274393;
+      color:white ;
+      
+      
+     
+ }
+  tr:nth-child(even) {
+    background-color: #eef1f6;
+}
+ table .id {
+    color :#2962ff;
+}
+h3 {
+    font-family: "roboto" , sans-serif;
+    margin-bottom: 2rem;
+    border-left: 5px solid #274393;
+    padding-left: 16px;
+    color: #274393;
+    display: grid;
+    
+}
+
+.main {
+    margin-left: 1rem;
+}
+.tab-op th {
+    padding: 1rem 1rem;
+}
+.tab-op td {
+    padding: 0.5rem 1rem;
+    
+}
+.tab-sep th {
+   padding-right: 9rem;
+}
+.tab-sep td {
+   padding-right: 9rem;
+    
+}
+.tab-med th {
+    padding-right: 0.5rem;
+ }
+ .tab-med td {
+    padding-right: 0.5rem;
+     
+ }
+.ajout {
+   position: relative;
+}
+.ajout a {
+    position: absolute;
+    text-decoration: none;
+    padding:  15px 30px;
+    background-color: #274393;
+    border: none;
+    color: #eef1f6;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    left: 50rem;
+    
+   
+}
+.ajout a:hover {
+    background-color: #2962ff;
+    color: #274393;
+}
+.tab {
+    position: relative;
+}
+.tab .notf p {
+    margin-top: 2px;
+    font-size: 10px;
+}
+.tab .notf {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+    top: 10px;
+    left: 50px;
+   
+}
+.tab.hovered .notf {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.tab.hovered .notf p {
+    margin-top: 2px;
+    font-size: 10px;
+    color: #f8edfc;
+}
+.reaction {
+    width:600px ;
+    height:300px ;
+    box-shadow: 0 5px 10px rgb(80, 74, 74);
+    background-color: white;
+    position: absolute;
+    top:7rem;
+    left: 300px;
+    border-radius: 10px;
+    padding: 25px;
+}
+.reaction h2 {
+    box-shadow: 0 5px 10px rgb(144, 137, 250);
+    background-color: #274393;
+    color: white;
+    margin-bottom: 3rem;
+    text-align: center;
+
+}
+.reaction input[type="radio"] {
+    display: none;
+}
+.rea {
+    margin-left: 6rem;
+}
+.rea-radio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-left: 1rem;
+
+}
+.rea-radio label {
+    position: relative;
+   
+}
+.rea-radio label::before {
+    content: "";
+    background: url(../img/icons8-ok.svg);
+    background-position: center;
+    background-size: contain;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    left: -28px;
+    top: -4px;
+
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+.rea-radio input[type="radio"]:checked + label::before{
+    transform: scale(1) rotateZ(0deg);
+}
+.rea-radio label::after {
+    content: "";
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -28px;
+    top: -4px;
+    border-radius: 50%;
+}
+.reaction button {
+    padding:  9px 25px;
+    background-color: #274393;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    margin-top: 4rem;
+    margin-left:15rem;
+}
+.reaction button:hover {
+    background-color: #7a9dfc;
+    
+}

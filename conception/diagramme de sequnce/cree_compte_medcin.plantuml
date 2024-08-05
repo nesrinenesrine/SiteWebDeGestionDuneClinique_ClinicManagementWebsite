@@ -1,0 +1,46 @@
+@startuml cree_compte
+    skinparam style strictuml
+    skinparam SequenceMessageAlignment center
+    médecin -> interface_utilisateur :1: Demande de fromulaire pour la creation du compte
+    activate interface_utilisateur
+    interface_utilisateur -->médecin: 2:Afficher le formulaire
+    deactivate interface_utilisateur
+    médecin ->> interface_utilisateur :  3:saisire le nom
+    activate médecin
+    médecin ->> interface_utilisateur :4: Saisir le prenom
+    médecin ->> interface_utilisateur : 5:Saisir le nom d'utilisateur
+    médecin ->> interface_utilisateur : 6:Saisir le telephone
+    médecin ->> interface_utilisateur : 7:Saisir l'email
+    médecin ->> interface_utilisateur : 8:choisire la soecialite
+    médecin ->> interface_utilisateur : 9:Saisir le mot de passe
+    médecin -> interface_utilisateur : 10:cliquer sur le boutton <<créer compte>>
+    activate interface_utilisateur
+    interface_utilisateur -> SGBD : 11:verfier si le  nom d'utilisateur exsite
+    deactivate interface_utilisateur
+    activate SGBD
+    alt Cas l'utilisateur existe 
+        SGBD --> interface_utilisateur :12: Erreur nom d'utilisateur existe
+        activate interface_utilisateur
+        interface_utilisateur --> médecin : 13:Saisir un autre nom d'utilisateur
+        
+        deactivate interface_utilisateur
+    else  Cas l'utilisateur n'existe  pas
+        interface_utilisateur -> SGBD : 14:verfier si l'email existe
+        alt  Cas email exsite
+            SGBD --> interface_utilisateur :15: Erreur email existe
+            activate interface_utilisateur
+            interface_utilisateur --> médecin : 16:vous avez deja un compte
+            deactivate interface_utilisateur
+        else Cas email n'exsite pas
+            SGBD --> interface_utilisateur :17:email n'existe pas
+            activate interface_utilisateur
+            interface_utilisateur ->> SGBD :18: Enregistrement des donne dans la base de donne
+            deactivate SGBD
+            deactivate interface_utilisateur
+            interface_utilisateur --> médecin :19: Rediriger vers la pse de connextion
+            activate interface_utilisateur
+            deactivate interface_utilisateur
+        end
+        
+    end 
+@enduml

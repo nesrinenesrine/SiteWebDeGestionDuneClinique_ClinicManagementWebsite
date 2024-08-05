@@ -1,0 +1,48 @@
+@startuml organise hospitalisation
+
+    skinparam style strictuml
+    skinparam SequenceMessageAlignment center
+    chef_de_service -> interface_utilisateur : 1: Demande pour afficher le formulair
+    activate interface_utilisateur
+    interface_utilisateur -->chef_de_service: 2: Afficher formulaire pour saisir la date d'entrée
+    chef_de_service  ->> interface_utilisateur : 3 : Saisir la date d'entrée de l'hospitalisation
+    chef_de_service -> interface_utilisateur : 4 : cliquer sur le boutton <<suivant>>
+    interface_utilisateur --> chef_de_service : 5:Afficher formulaire la date de sortie
+    chef_de_service->> interface_utilisateur :6: Saisir la date de sortie
+    chef_de_service-> interface_utilisateur :  7:cliquer sur le boutton <<suivant>>
+    interface_utilisateur->> chef_de_service: 8:Afficher l'interface pour choisire une chambre
+    deactivate interface_utilisateur
+    interface_utilisateur -> SGBD : 9 : Vérifier s'il ya des chambres libre
+    activate SGBD 
+    activate interface_utilisateur
+    deactivate interface_utilisateur
+    alt Aucun chambre disponible
+        SGBD --> interface_utilisateur :10 :Erreur aucun chambre est libre
+        activate interface_utilisateur
+        deactivate SGBD
+        interface_utilisateur --> chef_de_service : 11: Aucune chambre est disponible
+        deactivate interface_utilisateur
+    else il ya au moin une chambre disponible 
+        chef_de_service->> interface_utilisateur : 12: choisir la chambre
+        activate interface_utilisateur
+        chef_de_service-> interface_utilisateur :  13: cliquer sur le boutton <<suivant>>
+        interface_utilisateur -->chef_de_service: 14 Afficher interface pour choisire le lit
+        chef_de_service  -> interface_utilisateur :  15 :cliquer sur le boutton <<confirmer>>
+        deactivate interface_utilisateur
+        interface_utilisateur ->> SGBD : 16 :Enregistere dans la base de donnee
+        activate interface_utilisateur
+        activate SGBD
+        deactivate SGBD
+        deactivate interface_utilisateur
+        interface_utilisateur --> chef_de_service:17:revenire au profile
+        activate interface_utilisateur 
+        
+        deactivate interface_utilisateur
+        
+    end
+    
+@enduml
+
+
+
+

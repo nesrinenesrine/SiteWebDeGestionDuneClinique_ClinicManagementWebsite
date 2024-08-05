@@ -1,0 +1,187 @@
+* , ::after , ::before {
+    box-sizing: border-box;
+}
+body {
+    background-color: #fcf4ed;
+}
+
+.box2 {
+    width:50rem ;
+    height:650px ;
+    background-color: #274393;
+    position: relative;
+    top:10px;
+    left: 300px;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.box2 .img {
+    margin-left: -15rem;
+    margin-top: 3rem;
+}
+.box2  img {
+  width: 400px;
+  height: 400px;
+
+}
+
+.creer-compte {
+
+    margin-top: 0rem;
+    margin-right: 0rem;
+}
+.creer-compte h1{
+    
+    color: #f8edfc;
+    text-align: center;
+}
+.form-input {
+    width: 300px;
+    height: 35px;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+.form-input input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #f8edfc;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+.form-input label {
+    position: absolute;
+    top:5px;
+    left: 15px;
+    color: #f8edfc;
+    text-transform: capitalize;
+    font-size: 18px;
+    transition: top .3s;
+    padding: 0 5px;
+}
+.form-input input:hover {
+   border-color: #577fee;
+}
+.form-input input:focus{
+    border-color: #0645f3;
+    color: #f8edfc;
+}
+.form-input input:focus ~ label ,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+    top: -9px ;
+    background-color: #274393;
+}
+
+.nom-prenom {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.nom-prenom input {
+    width: 250px;
+}
+
+
+input[type="date"]{
+    background-color: #f8edfc;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    margin-left: 1rem;
+    color: black ;
+    font-size: 18px;
+    font-family: "Roboto Mono" , monospace;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+.form-date {
+    margin-left: 2rem;
+}
+.form-date label{
+    color: #f8edfc;
+} 
+input[type="radio"] {
+    color: #f8edfc;
+    margin-left: 2rem;
+}
+.form-radio {
+    margin-left: 2rem;
+}
+.form-radio label{
+    color: #f8edfc;
+}
+.creer-compte button {
+    position: absolute;
+    padding:  7px 25px;
+    background-color: #f8edfc;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    bottom: 3rem;
+    left: 35rem;
+    color: #274393;
+    
+}
+.creer-compte button:hover {
+    background-color:#000511;
+    
+    color: #f8edfc;
+}
+.form-select {
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+.form-select select {
+    width: 300px;
+    height: 20px;
+    border-radius: 10px;
+}
+.form-select label {
+    color: #f8edfc;
+    font-size: 19px;
+}
+.box3 {
+    position: relative;
+    top:60px;
+    left: 300px;
+    height: 550px;
+}
+.box3 img {
+    margin-left: -15rem;
+    margin-top: -2rem;
+}
+.secon {
+    margin-left: 2rem;
+}
+.secon p{
+    color: #f8edfc;
+}
+.secon a {
+    margin-left:1rem ;
+    text-decoration: none;
+    border-radius: 15px;
+     
+    padding: 0.4rem 1rem;
+    
+    background-color: #f8edfc;
+    color:#274393 ;
+    
+    
+}
+.secon a:hover {
+    background-color:#000511;
+    
+    color: #f8edfc;
+
+}
+.seconbat {
+    position: absolute;
+    bottom: -2rem;
+    
+}

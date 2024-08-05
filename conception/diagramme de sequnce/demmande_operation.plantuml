@@ -1,0 +1,27 @@
+@startuml demande operation
+
+skinparam style strictuml
+skinparam SequenceMessageAlignment center
+médecin -> interface_utilisateur : demander interface pour remplir les information
+    activate médecin
+    activate interface_utilisateur
+    deactivate médecin
+    interface_utilisateur -->médecin: afficher interface
+    activate médecin
+    médecin  ->> interface_utilisateur : ecrire la discription
+    médecin  ->> interface_utilisateur : ecrire la durre de l'operation
+    médecin  ->> interface_utilisateur : choisre le cas de l'operation
+    médecin -> interface_utilisateur : Clique sur le boutton <<envoiyer>>
+    deactivate médecin
+    deactivate interface_utilisateur
+    interface_utilisateur ->> SGBD : envoiyer les information a la base de donne
+    activate interface_utilisateur 
+    activate SGBD
+    deactivate interface_utilisateur
+    interface_utilisateur-->médecin:revenire au profile
+    activate interface_utilisateur
+    deactivate interface_utilisateur
+
+   
+    
+@enduml

@@ -1,0 +1,24 @@
+@startuml demande hopitalisation
+
+skinparam style strictuml
+skinparam SequenceMessageAlignment center
+user -> ui : demander interface pour remplir les information
+    activate user
+    activate ui
+    deactivate user
+    ui -->user: afficher interface
+    activate user
+    user  ->> ui : ecrire la discription
+    user -> ui : button
+    deactivate user
+    deactivate ui
+    ui -> SGBD : envoiyer les information a la base de donne
+    activate ui 
+    activate SGBD
+    deactivate ui
+    SGBD ->ui :incertion avec succ
+    deactivate SGBD
+    activate ui
+    ui->user:revenire a le profile
+    deactivate ui
+@enduml

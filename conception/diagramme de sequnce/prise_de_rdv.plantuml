@@ -1,0 +1,39 @@
+@startuml login
+    skinparam style strictuml
+    skinparam SequenceMessageAlignment center
+    patient -> interface_utilisateur : 1:Demande de formulaire 
+    activate interface_utilisateur
+    interface_utilisateur -->patient: 2:Afficher interface
+    patient  ->> interface_utilisateur :3: Choisire la specialite
+    patient -> interface_utilisateur : 4:Cliquer sur le boutton <<suivant>>
+    interface_utilisateur --> patient : 5:Afficher formulaire pour choisire le médecin relative a la specialite
+    patient  ->> interface_utilisateur : 6:Choisire le médecin
+    patient -> interface_utilisateur : 7:Cliquer sur le boutton <<suivant>>
+    interface_utilisateur --> patient :8:Afficher le formulaire de la date
+    patient  ->> interface_utilisateur :9: Saisir la  date
+    patient -> interface_utilisateur : 10:cliquer sur le boutton <<suivant>>
+    deactivate interface_utilisateur
+    interface_utilisateur -> SGBD : 11:Verifie si la date convien au médecin
+    activate interface_utilisateur 
+    activate SGBD
+    deactivate interface_utilisateur
+    alt date ne convine pas au medcin
+        SGBD --> interface_utilisateur :12:Erreur la date nes convient pas au médecin
+        activate interface_utilisateur
+        deactivate SGBD
+        interface_utilisateur --> patient :13: Choisire un autre date
+        
+        deactivate interface_utilisateur
+    else date conviene au médecin
+            interface_utilisateur --> patient : 14:Afficher interface pour choisire l'heur
+            activate interface_utilisateur
+            deactivate interface_utilisateur
+            patient -> interface_utilisateur :15: choisire l'heur
+            activate interface_utilisateur
+            interface_utilisateur ->>SGBD : 17:enregistrer dans la base de donnée
+            activate SGBD
+            interface_utilisateur --> patient :16: Revenire au profile de patient
+            deactivate SGBD 
+            deactivate interface_utilisateur
+    end
+@enduml

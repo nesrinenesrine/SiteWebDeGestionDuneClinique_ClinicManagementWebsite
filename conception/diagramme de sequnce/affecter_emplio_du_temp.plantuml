@@ -1,0 +1,30 @@
+@startuml affechter emploi du temp
+skinparam style strictuml
+skinparam SequenceMessageAlignment center
+administrateur -> interface_utilisateur :1: Demande d'interface pour affecter l'emploi
+activate interface_utilisateur
+interface_utilisateur--> administrateur : 2:Afficher interface pour affecter l'emploi du tepms
+administrateur ->> interface_utilisateur :3: Choisire les jour de consultation pour le nv medcin 
+administrateur -> interface_utilisateur :4:Clique sur le boutton <<confirmer>>
+deactivate interface_utilisateur
+interface_utilisateur -> SGBD :5: Verfie si la combinaison des jours existe dans la base de donnée 
+activate interface_utilisateur
+activate SGBD 
+deactivate interface_utilisateur
+alt jour existe 
+    SGBD --> interface_utilisateur :6: Combinaison existe 
+    interface_utilisateur ->> SGBD :7: Enregister dans la base de donnée
+    activate interface_utilisateur
+    interface_utilisateur -> administrateur : 8: Revenire au profile 
+    deactivate interface_utilisateur
+else jour n'existe pas 
+    SGBD -> interface_utilisateur : 9:combinaison n'existe pas
+    activate interface_utilisateur 
+    interface_utilisateur -> interface_utilisateur :10:Creation de la combinaison
+    activate interface_utilisateur 
+    deactivate interface_utilisateur
+    deactivate interface_utilisateur
+    SGBD -> interface_utilisateur: combinaison cree 
+    interface_utilisateur -> administrateur :succ
+end
+@enduml

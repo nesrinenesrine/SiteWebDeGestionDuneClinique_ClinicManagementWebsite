@@ -1,0 +1,19 @@
+@startuml patient+visiteur
+left to right direction
+actor "visiteur" as vs
+rectangle usecas {
+usecase "consulter les specialite" as UC1
+usecase "consulter les service" as UC2
+usecase "prendre rdv" as UC3
+
+}
+vs --> UC1
+vs --> UC2
+
+actor "patient" as patient 
+
+patient --|> vs
+
+patient --> UC3
+
+@enduml

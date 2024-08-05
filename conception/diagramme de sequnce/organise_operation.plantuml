@@ -1,0 +1,75 @@
+@startuml organise operation
+
+    skinparam style strictuml
+    skinparam SequenceMessageAlignment center
+    administrateur -> interface_utilisateur : 1: Demande pour afficher le formulair
+    activate  interface_utilisateur
+    interface_utilisateur -->administrateur: 2: Afficher formulaire
+    administrateur  ->> interface_utilisateur : 3 : Saisir la date de l'operation
+    administrateur -> interface_utilisateur : 4 : Clique sue le buotton suivant
+    deactivate  interface_utilisateur
+    interface_utilisateur -> SGBD : 5 : Verfie si le médecin est libre dans cette date 
+    activate SGBD
+    activate interface_utilisateur 
+    deactivate interface_utilisateur
+    alt le médecin n'est pas libre
+        SGBD --> interface_utilisateur :6 : Erreur date invalide
+        activate interface_utilisateur
+        deactivate SGBD
+        interface_utilisateur --> administrateur :7 : le médecin n'est pas libre dans cette date
+        
+        deactivate interface_utilisateur
+    else
+        interface_utilisateur -->administrateur:  8:afficher interface pour saisir l'heur de debut de l'operation
+        activate interface_utilisateur
+        deactivate interface_utilisateur
+        administrateur  ->> interface_utilisateur : 9:Saisire l'heur
+        activate interface_utilisateur
+        administrateur -> interface_utilisateur : 10:Clique sue le buotton suivant
+        deactivate interface_utilisateur
+
+        interface_utilisateur -> SGBD :  11: Verfie si le médecin est libre dans cette heur 
+        activate interface_utilisateur
+        deactivate interface_utilisateur 
+        activate SGBD 
+        alt le medcin a une autre operation
+            SGBD --> interface_utilisateur  : 12 :Erreur heur invalide
+            activate interface_utilisateur
+            deactivate SGBD
+            interface_utilisateur --> administrateur : 13 : le médecin a une autre operation dans cette heur
+            
+            deactivate interface_utilisateur 
+        else
+            interface_utilisateur -> SGBD :  14: Verfie si il ya un bloc libre 
+            activate interface_utilisateur
+            deactivate interface_utilisateur 
+            activate SGBD
+            alt si auqune bloc est disponible
+                SGBD --> interface_utilisateur :15:Erreur aucun bloc est libre
+                activate interface_utilisateur
+                deactivate SGBD
+                interface_utilisateur --> administrateur : 16: Aucun bloc est disponible
+                deactivate interface_utilisateur 
+            else
+                interface_utilisateur -->administrateur:  17:Afficher interface pour choisire le bloc
+                activate interface_utilisateur
+                administrateur  ->> interface_utilisateur :  18:choisire un bloc 
+                administrateur -> interface_utilisateur :  20 : Cliquer sur boutton <<Confirmer>>
+                deactivate interface_utilisateur
+
+                interface_utilisateur->>SGBD : 21:Enregistrement dans la base de donne
+                activate SGBD
+                deactivate SGBD 
+                interface_utilisateur --> administrateur : 22 : Revenire au profile
+                activate interface_utilisateur
+                deactivate interface_utilisateur
+                
+                
+
+            end 
+
+        end
+
+    end
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml cree_compte
+    skinparam style strictuml
+    skinparam SequenceMessageAlignment center
+    patient -> interface_utilisateu : 1 :Demande de fromulaire pour la creation du compte
+    activate interface_utilisateu
+    interface_utilisateu -->patient:2: Afficher le formulaire
+    deactivate interface_utilisateu
+    patient ->> interface_utilisateu : 3: Saisir le nom
+    patient ->> interface_utilisateu : 4:Saisir le prenom
+    patient ->> interface_utilisateu : 5:Saisir le nom d'utilisateur
+    patient ->> interface_utilisateu :6: Choisire le sexe
+    patient ->> interface_utilisateu : 7:Saisir le date de ncance
+    patient ->> interface_utilisateu :8: Saisir le telephone
+    patient ->> interface_utilisateu : 9:Saisir le email
+    patient ->> interface_utilisateu : 10:Saisir le  adress
+    patient ->> interface_utilisateu : 11:Saisir le ville
+    patient ->> interface_utilisateu : 12:Saisir le emploi
+    patient ->> interface_utilisateu : 13:Saisir le mot de passe
+    patient -> interface_utilisateu : 14: cliquer sur le boutton <<créer compte>>
+    activate interface_utilisateu
+    interface_utilisateu -> SGBD : 15:verfier si le  nom d'utilisateur exsite
+    deactivate interface_utilisateu
+    activate SGBD
+    alt Cas l'utilisateur existe 
+        SGBD --> interface_utilisateu :16: Erreur nom d'utilisateur existe
+        activate interface_utilisateu
+        interface_utilisateu --> patient : 17:Saisir un autre nom d'utilisateur
+        
+        deactivate interface_utilisateu
+    else  Cas l'utilisateur n'existe  pas
+        interface_utilisateu -> SGBD : 15:verfier si le email existe
+        alt  Cas email exsite
+            SGBD --> interface_utilisateu :18: Erreur email existe
+            activate interface_utilisateu
+            interface_utilisateu --> patient : 19:vous avez déja un compte
+            deactivate interface_utilisateu
+        else Cas email n'exsite pas
+            SGBD --> interface_utilisateu : 20 : email n'exste pas
+            activate interface_utilisateu
+            interface_utilisateu ->> SGBD :21: enregistrement des donne dans la base de donnée
+            deactivate SGBD
+            interface_utilisateu --> patient :22: Rediriger vers la page de connextion
+            deactivate interface_utilisateu
+        end
+        
+    end 
+@enduml

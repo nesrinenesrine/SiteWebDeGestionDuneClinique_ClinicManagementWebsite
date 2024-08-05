@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+nav {
+    background-color: #f8edfc;
+    
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    
+    
+}
+.backgound {
+    background-image: url(../img/index-med3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400ox;
+    height: 600px;
+    margin-left: 0;
+    overflow: hidden;
+}
+.logo{
+    margin-top: 5px;
+}
+
+.logo img {
+    width: 20rem;
+    height: 18rem;
+    position: relative;
+    top: 5px;
+    
+}
+.backgound {
+    position: relative;
+}
+.containre_header {
+    width: 100%;
+    position: absolute;
+    left:2rem ;
+    top: 5rem;
+    text-align: center;
+    color:#09010c;
+    
+}
+.containre_header h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+.containre_header p {
+    margin: 20px auto;
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Kdam Thmor Pro', sans-serif; ;
+    line-height: 25px;
+}
+.containre_header button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #274393;
+    background-color: #274393;
+    color: #09010c;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.containre_header span {
+    background: #274393;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+
+}
+.containre_header button:hover span{
+    width: 100%;
+}
+.containre_header button:hover {
+    border: none;
+}
+
+.backgound1 {
+    background-image: url(../img/index-med2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400ox;
+    height: 600px;
+    margin-left: 0;
+    overflow: hidden;
+}
+.backgound1 {
+    position: relative;
+}

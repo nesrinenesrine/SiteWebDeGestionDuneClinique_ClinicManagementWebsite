@@ -1,0 +1,184 @@
+body {
+    background-color: #fcf4ed;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover {
+    color: #000511;
+}
+.icon ion-icon {
+    font-size: 1.5rem;
+    color: #274393;
+}
+.title {
+ 
+    font-size: 1rem;
+    color: #274393;
+    
+}
+.box {
+    width:800px ;
+    height:400px ;
+    background-color: #274393;
+    position: absolute;
+    top:90px;
+    left: 250px;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.box .img {
+    margin-left: -15px;
+    margin-top: -15px;
+}
+.box  img {
+  width: 400px;
+  height: 400px;
+
+}
+
+.box .rendez {
+  position: absolute;
+  right: 7rem;
+  top: 5rem;
+
+}  
+.box .rendez h1,h3 {
+    margin-bottom: 2rem;
+    color: #f8edfc;
+}
+
+.box .rendez label {
+    color: #f8edfc;
+    font-size: 20px;
+    
+
+}
+.box .rendez button {
+    padding:  9px 25px;
+    background-color: #f8edfc;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    margin-top: 2rem;
+    margin-left: 15rem;
+}
+.box button:hover {
+    background-color: #577fee;
+}
+.box .rendez select {
+    width: 300px;
+    height: 20px;
+    border-radius: 10px;
+}
+.box .rendez a {
+    text-decoration: none;
+    padding:  7px 21px;
+    background-color: #f8edfc;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    position: absolute;
+    bottom: 1px;
+    right: 17rem;
+}
+.box .rendez a:hover {
+    background-color: #577fee;
+}
+.box .rendez-heure  {
+  position: relative;
+  top: 5rem;
+  right: 2rem;
+}
+
+.box .rendez-heure h1 , h3 {
+    margin-bottom: 2rem;
+    color: #f8edfc;
+}
+.box .rendez-heure button {
+    padding:  9px 25px;
+    background-color: #f8edfc;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+   
+}
+.box button:hover {
+    background-color: #577fee;
+}
+input[type="date"]{
+    background-color: #f8edfc;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    margin-left: 1rem;
+    color: black ;
+    font-size: 18px;
+    font-family: "Roboto Mono" , monospace;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+input[type="time"] {
+    background-color: #f8edfc;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    margin-left: 1rem;
+    color: black ;
+    font-size: 18px;
+    font-family: "Roboto Mono" , monospace;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+.header1 {
+    left: 25rem;
+}
+.op {
+    left: 25rem;
+}
+.box .rendez-hos {
+    right: 0;
+    left: 25rem;
+}
+
+.err {
+    width:200px ;
+    height:200px ;
+    background-color: #274393;
+    position: absolute;
+    top:5rem;
+    left: 38%;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.err  button {
+    padding:  9px 25px;
+    background-color: #f8edfc;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+    margin-top: 2rem;
+    
+}
+.err button:hover {
+    background-color: #577fee;
+}
+
+.err p{
+    color: #f8edfc;
+}

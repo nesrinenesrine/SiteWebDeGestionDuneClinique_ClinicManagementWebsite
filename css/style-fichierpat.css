@@ -1,0 +1,111 @@
+* , ::after , ::before {
+    box-sizing: border-box;
+}
+body {
+    background-color: #fcf4ed;
+   position: relative;
+}
+
+.fiche {
+    position: absolute;
+    width: max-content;
+    padding: 25px;
+   display: grid;
+   box-shadow: 0 5px 10px rgb(144, 137, 250);
+   background-color: white;
+   color:  #274393;
+   
+   left: 20rem;
+    
+}
+table {
+    border-collapse:collapse ;
+    box-shadow: 0 5px 10px rgb(80, 74, 74);
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 2rem;
+   
+}
+ thead{
+    box-shadow: 0 5px 10px rgb(144, 137, 250);
+     background-color: #274393;
+     color: white;
+
+ }
+ th {
+     padding: 1rem 2rem;
+     text-decoration: uppercase;
+     letter-spacing: 0.1rem;
+     font-size: 0.7rem;
+     font-weight: 900;
+
+
+ }
+
+
+ td {
+     padding: 0.5rem 1.5rem;
+ }
+ table button {
+      border-radius: 0.2rem;
+     
+      padding: 0.2rem 1rem;
+      
+      background-color: #274393;
+      color:white ;
+      border-color: #274393;
+      box-shadow: #f8edfc;
+     
+ }
+  tr:nth-child(even) {
+    background-color: #eef1f6;
+}
+ table .id {
+    color :#2962ff;
+}
+.link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.link {
+    margin-top: 2rem;
+}
+h3 {
+    font-family: "roboto" , sans-serif;
+    margin-bottom: 2rem;
+    border-left: 5px solid #274393;
+    padding-left: 16px;
+    color: #274393;
+}
+.link a {
+    text-decoration: none;
+    padding:  7px 21px;
+    background-color:#274393;
+    color: #f8edfc;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+   
+}
+.link a:hover {
+    background-color: #577fee;
+}
+.profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.icon ion-icon {
+    font-size: 1.5rem;
+    color: #274393;
+}
+.title {
+ 
+    font-size: 1rem;
+    color: #274393;
+    
+}

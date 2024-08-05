@@ -1,0 +1,59 @@
+@startuml login
+skinparam style strictuml
+skinparam SequenceMessageAlignment center
+Médecin -> interface_utilisateur : 1 : Demande de la page de connexion
+activate interface_utilisateur
+interface_utilisateur -->Médecin: 2 : Affcihcer formulaire de connexion 
+deactivate interface_utilisateur
+Médecin ->> interface_utilisateur : 3 : Saidir le nom d'utilisateur ou le email
+
+Médecin ->> interface_utilisateur : 4 : Saidir le mot de passe
+Médecin -> interface_utilisateur : 5 : Clique sur le boutton << Se connecter >>
+
+interface_utilisateur -> SGBD :6  :Verfie si le nom d etulisateur et le mot de passe son correct
+activate interface_utilisateur
+activate SGBD
+deactivate interface_utilisateur
+alt Nom d'utilasateur nesxite pas
+    SGBD --> interface_utilisateur : 7: Erreur Le nom d'utilisateur incorrect
+    activate interface_utilisateur
+    interface_utilisateur --> Médecin : 8: Nom d'utilisateur incorrect 
+    
+    deactivate interface_utilisateur
+else
+    alt Mot de passe incorrect
+        SGBD --> interface_utilisateur : 9: Erreur mot de passe incorrect
+        activate interface_utilisateur
+        deactivate SGBD
+        interface_utilisateur --> Médecin : 10: Mot de pass incorrect
+        deactivate interface_utilisateur
+    else
+        
+        interface_utilisateur -> SGBD : 11 : Verfier le role de médecin 
+        activate interface_utilisateur
+        activate SGBD
+        deactivate interface_utilisateur
+        alt Role de médecin est utilisateur simple
+
+            SGBD --> interface_utilisateur : 12 : Connextion avec succè
+            activate interface_utilisateur
+            interface_utilisateur --> Médecin: 13 : Afficher le profile de médecin
+            
+            deactivate interface_utilisateur
+        else
+            alt Role de médecin est chef de service 
+                SGBD --> interface_utilisateur : 14 : Connextion avec succè
+                activate interface_utilisateur
+                interface_utilisateur --> Médecin: 15 : Afficher le profile de chef de service
+                deactivate interface_utilisateur
+            else
+                SGBD --> interface_utilisateur : 16 : Connextion avec succè
+                deactivate SGBD
+                activate interface_utilisateur
+                interface_utilisateur --> Médecin: 17 : Afficher le profile de administrateur
+                deactivate interface_utilisateur
+            end
+        end
+    end
+end
+@enduml

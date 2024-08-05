@@ -1,0 +1,145 @@
+.mon-rendez {
+    margin-left: 3rem;
+    
+}
+.recommendation {
+    width: max-content;
+    padding: 25px;
+   display: grid;
+   box-shadow: 0 5px 10px rgb(144, 137, 250);
+   background-color: white;
+   color:  #274393;
+}
+.container{
+    display: grid;
+    grid-template-columns:  repeat(7,3fr);
+    grid-gap: 4rem;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+.recommendation label {
+    position: relative;
+}
+.recommendation label::before {
+    content: "";
+    background: url(../img/icons8-ok.svg);
+    background-position: center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    
+    position: absolute;
+    left: -30px;
+    top: -6px;
+
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+.recommendation input[type="checkbox"]:checked + label::before{
+    transform: scale(1) rotateZ(0deg);
+}
+.recommendation label::after {
+    content: "";
+    border: 2px solid #90acf7dc;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: -28px;
+    top: -4px;
+    border-radius: 50%;
+}
+ h3 {
+    font-family: "roboto" , sans-serif;
+    margin-bottom: 2rem;
+    border-left: 5px solid #274393;
+    padding-left: 16px;
+    color: #274393;
+}
+.recommendation button {
+    position: absolute;
+    padding:  7px 25px;
+    background-color: #274393;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: all 0.3 ease 0s ;
+
+    left: 20rem;
+   
+    color: #f8edfc;
+}
+.recommendation button:hover {
+    background-color:#000511;
+    
+    color: #f8edfc;
+}
+.recommendation a{
+    position: relative;
+    padding:  7px 25px;
+    border-radius: 45px;
+    width: 100%;
+    background-color: #274393;
+    text-decoration: none;
+    color: #f8edfc;
+    cursor: pointer;
+    bottom: 1rem;
+    left: 45rem;
+
+}
+.boxs {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 20rem;
+}
+.welcome-box {
+    font-family: "roboto" , sans-serif;
+    margin-top: 2rem;
+    
+    
+}
+.box-info {
+    
+    
+    width: max-content;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgb(144, 137, 250);
+    background-color: white;
+  
+}
+
+.box-info h4 {
+    font-family: "roboto" , sans-serif;
+}
+.box-info span {
+    color: #000511;
+}
+.head {
+    width: max-content;
+    display: grid;
+    padding: 25px;
+}
+.tab-rendez {
+    margin-top: -2rem;
+}
+.box-mod {
+    margin-top: 4rem ;
+}
+.tab-op {
+    margin-top: -1rem ; 
+
+}
+.tab-op th {
+    padding: 1rem 2rem;
+   
+
+
+}
+.username {
+    color:#274393;
+}
+
+.tab-op td {
+    padding: 1rem 3rem;
+}

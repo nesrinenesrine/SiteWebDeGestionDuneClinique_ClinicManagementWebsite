@@ -1,0 +1,39 @@
+.boxs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+ }
+ .welcome-box {
+     font-family: "roboto" , sans-serif;
+     
+     
+     
+ }
+ .box-info {
+     
+     
+     width: max-content;
+     padding: 25px;
+     box-shadow: 0 5px 10px rgb(144, 137, 250);
+     background-color: white;
+   
+ }
+ 
+ .box-info h4 {
+     font-family: "roboto" , sans-serif;
+ }
+ .box-info span {
+     color: #000511;
+ }
+ .head {
+    width: max-content;
+    display: grid;
+    padding: 25px;
+   
+}
+.tab-rendez {
+    margin-top: -2rem;
+}
+
